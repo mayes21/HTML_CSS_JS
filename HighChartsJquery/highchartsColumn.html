@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>highcharts</title>
+		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+		<script src="highcharts.js"></script>
+		<script src="exporting.js"></script>
+		<script type="text/javascript">
+
+			function drawColumn()
+			{
+				$(function () {
+        $('#container').highcharts({
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Monthly Average Rainfall'
+            },
+            xAxis: {
+                categories: [
+                    'cyberbullying',
+                    'depression',
+                    'fear',
+                    'hurt',
+                    'insults',
+                    'loneliness',
+                    'lonely',
+                    'method',
+                    'sentence',
+                    'anorexia'
+                ]
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'BLABLA (mm)'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y:.1f} </b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: 'Subcategories',
+                data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4,15.2]
+    
+            }]
+        });
+    });
+			}
+
+
+
+		</script>
+	</head>
+
+<body>
+
+	
+	<a href="#" onclick="drawColumn()">link2</a>
+	<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+
+
+
+
+
+
+
+</body>
+
+</html>

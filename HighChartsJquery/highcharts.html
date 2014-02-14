@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>highcharts</title>
+		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+		<script src="highcharts.js"></script>
+		<script src="exporting.js"></script>
+		<script type="text/javascript">
+
+
+		$(function () {
+		    
+		    
+		    $(document).ready(function () {
+		    	var chart;
+		    	
+		    	// Build the chart
+		        $('#container').highcharts({
+		            chart: {
+		                plotBackgroundColor: null,
+		                plotBorderWidth: null,
+		                plotShadow: false
+		            },
+		            title: {
+		                text: 'Suspects tweets (Suicidal ones and none)'
+		            },
+		            tooltip: {
+		        	    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+		            },
+		            plotOptions: {
+		                pie: {
+		                    allowPointSelect: true,
+		                    cursor: 'pointer',
+		                    dataLabels: {
+		                        enabled: false
+		                    },
+		                    showInLegend: true
+		                }
+		            },
+		            series: [{
+		                type: 'pie',
+		                name: 'Browser share',
+		                data: [
+		                    ['Suspects tweets but not suicidal',  59.2],
+		                    {
+		                        name: 'Suspects and suicidal tweets',
+		                        y: 40.8,
+		                        sliced: false,
+		                        selected: true
+		                    },
+		                ]
+		            }]
+		        });
+		    });
+		    
+		});
+
+
+
+
+
+
+
+		</script>
+	</head>
+
+<body>
+
+	
+
+	<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+
+
+
+
+
+
+
+</body>
+
+</html>
